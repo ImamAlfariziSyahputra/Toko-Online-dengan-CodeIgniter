@@ -7,6 +7,11 @@ class model_barang extends CI_Model
         return $this->db->get('barang')->result();
     }
 
+    public function getBarangById($id)
+    {
+        return $this->db->get_where('barang', ['id_barang' => $id])->row();
+    }
+
     public function tambahDataBarang()
     {
         $nama_barang  = $this->input->post('nama_barang', true);
@@ -39,4 +44,25 @@ class model_barang extends CI_Model
 
         $this->db->insert('barang', $data);
     }
+
+    public function ubahDataBarang()
+    {
+        $data = [
+            'nama_barang'  => $this->input->post('nama_barang', true),
+            'keterangan'  => $this->input->post('keterangan', true),
+            'kategori'  => $this->input->post('kategori', true),
+            'harga'  => $this->input->post('harga', true),
+            'stok'  => $this->input->post('stok', true)
+        ];
+
+        $this->db->where('id_barang', $this->input->post('id'));
+        $this->db->update('barang', $data);
+    }
+
+    public function hapusDataBarang($id)
+    {
+        $this->db->where('id_barang', $id);
+        $this->db->delete('barang');
+    }
+
 }

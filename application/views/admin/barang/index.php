@@ -29,14 +29,14 @@
                     </div>
                 </td>
                 <td>
-                    <div class="btn btn-success btn-sm">
+                    <a class="btn btn-success btn-sm" href="<?= base_url('barang/ubah/').$b->id_barang ?>">
                         <i class="fas fa-edit"></i>
-                    </div>
+                    </a>
                 </td>
                 <td>
-                    <div class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash"></i>
-                    </div>
+                    <a class="btn btn-danger btn-sm" href="<?= base_url('barang/hapus/').$b->id_barang ?>" onclick="return confirm('yakin?')">
+                        <i class=" fas fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -58,22 +58,27 @@
                     <div class="form-group">
                         <label for="">Nama Barang</label>
                         <input type="text" name="nama_barang" class="form-control">
+                        <small class="form-text text-danger"><?= form_error('nama_barang'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="">Keterangan</label>
                         <input type="text" name="keterangan" class="form-control">
+                        <small class="form-text text-danger"><?= form_error('keterangan'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="">Kategori</label>
                         <input type="text" name="kategori" class="form-control">
+                        <small class="form-text text-danger"><?= form_error('kategori'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="">Harga</label>
                         <input type="text" name="harga" class="form-control">
+                        <small class="form-text text-danger"><?= form_error('harga'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="">Stok</label>
                         <input type="text" name="stok" class="form-control">
+                        <small class="form-text text-danger"><?= form_error('stok'); ?></small>
                     </div>
                     <div class="form-group">
                         <label for="">Gambar Produk</label><br>
