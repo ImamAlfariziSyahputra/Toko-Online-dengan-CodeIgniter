@@ -27,9 +27,9 @@
     <!-- Item -->
     <div class="row text-center mt-4">
         <?php foreach ($barang as $b) : ?>
-            <div class="card ml-3" style="width: 16rem;">
+            <div class="card ml-3 mb-3" style="width: 16rem;">
                 <img src="<?= base_url('assets/img/item/') . $b->gambar ?>" class="card-img-top">
-                <div class="card-body">
+                <div class="card-body ">
                     <h5 class="card-title mb-1"><?= $b->nama_barang; ?></h5>
                     <small><?= $b->keterangan; ?></small><br>
                     <span class="badge badge-pill badge-success mb-3"><?= $b->harga; ?></span><br>
