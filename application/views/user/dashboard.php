@@ -32,8 +32,8 @@
                 <div class="card-body">
                     <h5 class="card-title mb-1"><?= $b->nama_barang; ?></h5>
                     <small><?= $b->keterangan; ?></small><br>
-                    <span class="badge badge-pill badge-success mb-3"><?= $b->harga; ?></span><br>
-                    <a href="#" class="btn btn-sm btn-primary">Tambah ke Keranjang</a>
+                    <span class="badge badge-pill badge-success mb-3">Rp.<?= number_format($b->harga, 0, ',', '.'); ?></span><br>
+                    <a href="<?= base_url('user/tambahkeranjang/') . $b->id_barang ?>" class="btn btn-sm btn-primary">Tambah ke Keranjang</a>
                     <a href="#" class="btn btn-sm btn-success">Detail</a>
                 </div>
             </div>
