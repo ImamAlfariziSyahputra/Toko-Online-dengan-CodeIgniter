@@ -43,5 +43,25 @@ class model_invoice extends CI_Model
         return true;
     }
 
+    public function getInvoiceById($id_invoice)
+    {
+        $result = $this->db->where('id',$id_invoice)->limit(1)->get('invoice');
+        if($result->num_rows() > 0) {
+            return $result->row();
+        } else {
+            return false;
+        }
+    }
+
+    public function getPesanById($id_invoice)
+    {
+        $result = $this->db->where('id_invoice',$id_invoice)->get('pesan');
+        if($result->num_rows() > 0) {
+            return $result->result();
+        } else {
+            return false;
+        }
+    }
+
 
 }

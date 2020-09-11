@@ -17,7 +17,7 @@
             <td><?= $inv->alamat; ?></td>
             <td><?= $inv->tgl_pesan; ?></td>
             <td><?= $inv->batas_bayar; ?></td>
-            <td><a href="" class="btn btn-sm btn-info">Detail</a></td>
+            <td><a href="<?= base_url('invoice/detail/').$inv->id ?>" class="btn btn-sm btn-info">Detail</a></td>
         </tr>
         <?php endforeach; ?>
     </table>

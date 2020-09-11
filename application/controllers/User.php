@@ -2,14 +2,39 @@
 
 class User extends CI_Controller
 {
-    public function index()
+    public function __construct()
     {
-        $data['title'] = 'Dashboard';
-        $data['barang'] = $this->model_barang->getAllBarang();
+        parent::__construct();
+        if ($this->session->userdata('role_id') != '2') {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Anda Belum Login!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+            redirect('auth/login');
+        }
+    }
+
+    // public function index()
+    // {
+    //     $data['title'] = 'Dashboard';
+    //     $data['barang'] = $this->model_barang->getAllBarang();
+    //     $this->load->view('templates/header', $data);
+    //     $this->load->view('templates/sidebar');
+    //     $this->load->view('templates/topbar');
+    //     $this->load->view('user/dashboard/index');
+    //     $this->load->view('templates/footer');
+    // }
+
+    public function detailBarang($id)
+    {
+        $data['title'] = 'Detail Barang';
+        $data['barang'] = $this->model_barang->getDetailBarang($id);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('user/dashboard');
+        $this->load->view('user/dashboard/detail_barang');
         $this->load->view('templates/footer');
     }
     
@@ -25,7 +50,7 @@ class User extends CI_Controller
         ];
 
         $this->cart->insert($data);
-        redirect('user');
+        redirect('welcome');
     }
 
     public function detailKeranjang() 
@@ -34,14 +59,14 @@ class User extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('user/keranjang');
+        $this->load->view('user/dashboard/keranjang');
         $this->load->view('templates/footer');
     }
 
     public function hapusKeranjang() 
     {
         $this->cart->destroy();
-        redirect('user');
+        redirect('welcome');
     }
 
     public function pembayaran() 
@@ -50,7 +75,7 @@ class User extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('user/pembayaran');
+        $this->load->view('user/dashboard/pembayaran');
         $this->load->view('templates/footer');
     }
 
@@ -65,7 +90,7 @@ class User extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar');
             $this->load->view('templates/topbar');
-            $this->load->view('user/proses_pesan');
+            $this->load->view('user/dashboard/proses_pesan');
             $this->load->view('templates/footer');
         } else {
             echo "Maaf, Pesanan Anda Gagal Diproses";

@@ -29,12 +29,12 @@
                     </div>
                 </td>
                 <td>
-                    <a class="btn btn-success btn-sm" href="<?= base_url('barang/ubah/').$b->id_barang ?>">
+                    <a class="btn btn-success btn-sm" href="<?= base_url('barang/ubah/') . $b->id_barang ?>">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a class="btn btn-danger btn-sm" href="<?= base_url('barang/hapus/').$b->id_barang ?>" onclick="return confirm('yakin?')">
+                    <a class="btn btn-danger btn-sm" href="<?= base_url('barang/hapus/') . $b->id_barang ?>" onclick="return confirm('yakin?')">
                         <i class=" fas fa-trash"></i>
                     </a>
                 </td>
@@ -66,9 +66,15 @@
                         <small class="form-text text-danger"><?= form_error('keterangan'); ?></small>
                     </div>
                     <div class="form-group">
-                        <label for="">Kategori</label>
-                        <input type="text" name="kategori" class="form-control">
-                        <small class="form-text text-danger"><?= form_error('kategori'); ?></small>
+                        <label for="kategori">Kategori</label>
+                        <select class="form-control" id="kategori" name="kategori">
+                            <option value="Elektronik">Elektronik</option>
+                            <option value="Fashion Anak">Fashion Anak</option>
+                            <option value="Fashion Pria">Fashion Pria</option>
+                            <option value="Fashion Wanita">Fashion Wanita</option>
+                            <option value="Fashion Anak">Fashion Anak</option>
+                            <option value="Sports">Sports</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="">Harga</label>

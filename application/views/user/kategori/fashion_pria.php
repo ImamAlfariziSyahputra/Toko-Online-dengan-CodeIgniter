@@ -26,15 +26,15 @@
 
     <!-- Item -->
     <div class="row text-center mt-4">
-        <?php foreach ($barang as $b) : ?>
+        <?php foreach ($pria as $p) : ?>
             <div class="card ml-3 mb-3" style="width: 16rem;">
-                <img src="<?= base_url('assets/img/item/') . $b->gambar ?>" class="card-img-top">
+                <img src="<?= base_url('assets/img/item/') . $p->gambar ?>" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title mb-1"><?= $b->nama_barang; ?></h5>
-                    <small><?= $b->keterangan; ?></small><br>
-                    <span class="badge badge-pill badge-success mb-3">Rp.<?= number_format($b->harga, 0, ',', '.'); ?></span><br>
-                    <a href="<?= base_url('user/tambahkeranjang/') . $b->id_barang ?>" class="btn btn-sm btn-primary">Tambah ke Keranjang</a>
-                    <a href="#" class="btn btn-sm btn-success">Detail</a>
+                    <h5 class="card-title mb-1"><?= $p->nama_barang; ?></h5>
+                    <small><?= $p->keterangan; ?></small><br>
+                    <span class="badge badge-pill badge-success mb-3">Rp.<?= number_format($p->harga, 0, ',', '.'); ?></span><br>
+                    <a href="<?= base_url('user/tambahkeranjang/') . $p->id_barang ?>" class="btn btn-sm btn-primary">Tambah ke Keranjang</a>
+                    <a href="<?= base_url('user/detailbarang/') . $p->id_barang ?>" class="btn btn-sm btn-success">Detail</a>
                 </div>
             </div>
         <?php endforeach; ?>

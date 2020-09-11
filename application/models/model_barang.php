@@ -76,4 +76,15 @@ class model_barang extends CI_Model
         }
     }
 
+    public function getDetailBarang($id)
+    {
+        $result = $this->db->where('id_barang', $id)->get('barang');
+
+        if($result->num_rows() > 0) {
+            return $result->result();
+        } else {
+            return false;
+        }
+    }
+
 }

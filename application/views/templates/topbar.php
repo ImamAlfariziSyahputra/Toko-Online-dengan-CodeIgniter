@@ -56,30 +56,24 @@
                             <a href="<?= base_url('user/detailkeranjang') ?>"><?= $keranjang; ?></a>
                         </li>
                     </ul>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <?php if ($this->session->userdata('username')) : ?>
+                            <li>
+                                <div class="">Selamat Datang <?= $this->session->userdata('username'); ?></div>
+                            </li>
+                            <li class="ml-2">
+                                <a href="<?= base_url('auth/logout') ?>">Logout</a>
+                            </li>
+                        <?php else : ?>
+                            <li>
+                                <a href="<?= base_url('auth/login') ?>">Login</a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
                 </div>
-
-                <div class="topbar-divider d-none d-sm-block"></div>
-
-                <!-- Nav Item - User Information -->
-                <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Imam Alfarizi</span>
-                        <img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/lazy.jpg') ?>">
-                    </a>
-                    <!-- Dropdown - User Information -->
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">
-                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                            My Profile
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="<?= base_url('auth/logout') ?>" data-toggle="modal" data-target="#logoutModal">
-                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Logout
-                        </a>
-                    </div>
-                </li>
-
             </ul>
 
         </nav>

@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?= base_url('user') ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -29,31 +29,31 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?= base_url('kategori/elektronik') ?>">
             <i class="fas fa-fw fa-tv"></i>
             <span>Elektronik</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?= base_url('kategori/fashionpria') ?>">
             <i class="fas fa-fw fa-tshirt"></i>
             <span>Pakaian Pria</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?= base_url('kategori/fashionwanita') ?>">
             <i class="fas fa-fw fa-tshirt"></i>
             <span>Pakaian Wanita</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?= base_url('kategori/fashionanak') ?>">
             <i class="fas fa-fw fa-tshirt"></i>
             <span>Pakaian Anak-Anak</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?= base_url('kategori/sports') ?>">
             <i class="far fa-fw fa-futbol"></i>
             <span>Pakaian Olahraga</span></a>
     </li>
